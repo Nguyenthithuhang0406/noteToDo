@@ -1,0 +1,49 @@
+POST http://localhost:6000/api/auth/register
+Content-Type: application/json
+
+{
+    "username":"lazy45478910",
+    "password":"girl12@12"
+}
+//register
+//login
+###
+POST http://localhost:6000/api/auth/login
+Content-Type: application/json
+
+{
+    "username":"lazy454789",
+    "password":"girl12@1"
+}
+
+//authorization and create post
+###
+POST http://localhost:6000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWQyMTI1YmExMTY2YzU1MzA0NjdhZTQiLCJpYXQiOjE3MDg2MDA1MzB9.27WKcd6l6qQ3BSbzqxAwjq-sRqEK_fobw66fyCybnq0
+
+{
+    "title": "React kk",
+    "description": "React node",
+    "url" : "react.com"
+}
+
+###
+GET http://localhost:6000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWQyMTI1YmExMTY2YzU1MzA0NjdhZTQiLCJpYXQiOjE3MDg2MDA1MzB9.27WKcd6l6qQ3BSbzqxAwjq-sRqEK_fobw66fyCybnq0
+
+###
+PUT http://localhost:6000/api/posts/65d72d0e2001c3f55e6ec232
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWQyMTI1YmExMTY2YzU1MzA0NjdhZTQiLCJpYXQiOjE3MDg2MDA1MzB9.27WKcd6l6qQ3BSbzqxAwjq-sRqEK_fobw66fyCybnq0
+Content-Type: application/json
+
+{
+    "title": "my update ",
+    "description": "nodejs",
+    "url": "node.com",
+    "status": "LEARNING"
+}
+
+###
+DELETE  http://localhost:6000/api/posts/65d72d0e2001c3f55e6ec232
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NWQyMTI1YmExMTY2YzU1MzA0NjdhZTQiLCJpYXQiOjE3MDg1NzEzOTh9.VRwg4sJ--Hs8TrAZwdzVCJM1lJaH7_MIZUhVD0xLxjg
