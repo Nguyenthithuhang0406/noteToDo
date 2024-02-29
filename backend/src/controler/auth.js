@@ -78,4 +78,17 @@ const Register = async (req, res) => {
     }
   };
 
-  module.exports = {Register, Login};
+  const getUser = async (req, res) => {
+    try {
+      const user = await User.findById(req.userId).select('-password');  //lay du lieu user theo id (tru password)
+      if(!user){
+        return res.status(400).json({success: false, message: "user not found!"});
+      }
+      res.json({success: true, user});
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({ success: false, message: "internal server!" });
+    }
+  };
+
+  module.exports = {Register, Login, getUser};
